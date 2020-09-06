@@ -1,0 +1,10 @@
+"use strict";
+let fs=require('fs');
+let info=fs.readFileSync('singleobject.json');
+let obj=JSON.parse(info);
+console.log(obj.name);
+console.log(obj.age);
+let newobj={};
+newobj.name=obj.name;
+let s = JSON.stringify(newobj);
+fs.writeFileSync("newtest.json",s);
